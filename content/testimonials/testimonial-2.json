@@ -1,0 +1,8 @@
+{
+  "name": "John Doe",
+  "title": "CEO",
+  "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum eget auctor justo.",
+  "image": "https://i.pravatar.cc/150?img=12",
+  "stars": 5,
+  "createdAt": "2025-01-01"
+}
