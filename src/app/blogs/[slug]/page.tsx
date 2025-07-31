@@ -20,12 +20,11 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
   try {
     const fileContents = await fs.readFile(filePath, 'utf8');
     return JSON.parse(fileContents);
-  } catch (error) {
+  } catch {
     return null;
   }
 }
 
-// ✅ ¡NO pongas tipos explícitos aquí!
 export async function generateStaticParams() {
   const blogsDirectory = path.join(process.cwd(), 'content', 'blogs');
   const filenames = await fs.readdir(blogsDirectory);
@@ -35,7 +34,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// ✅ Opcional: metadatos para SEO
 export async function generateMetadata({
   params,
 }: {
@@ -55,7 +53,6 @@ export async function generateMetadata({
   };
 }
 
-// ✅ Componente principal
 export default async function BlogPostPage({
   params,
 }: {
