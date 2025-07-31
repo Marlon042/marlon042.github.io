@@ -1,5 +1,3 @@
-// src/app/blogs/[slug]/page.tsx
-
 import { promises as fs } from 'fs';
 import path from 'path';
 import { notFound } from 'next/navigation';
@@ -15,13 +13,6 @@ interface BlogPost {
   content: string;
 }
 
-// Define los props esperados para la página dinámica
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
 async function getBlogPost(slug: string): Promise<BlogPost | null> {
   const blogsDirectory = path.join(process.cwd(), 'content', 'blogs');
   const filePath = path.join(blogsDirectory, `${slug}.json`);
@@ -34,8 +25,8 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
-// Exportar correctamente los parámetros estáticos para la generación de rutas
-export async function generateStaticParams(): Promise<PageProps["params"][]> {
+// ✅ ¡NO pongas tipos explícitos aquí!
+export async function generateStaticParams() {
   const blogsDirectory = path.join(process.cwd(), 'content', 'blogs');
   const filenames = await fs.readdir(blogsDirectory);
 
@@ -44,8 +35,12 @@ export async function generateStaticParams(): Promise<PageProps["params"][]> {
   }));
 }
 
-// Opcional: agregar metadatos por página
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+// ✅ Opcional: metadatos para SEO
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const post = await getBlogPost(params.slug);
 
   if (!post) {
@@ -60,8 +55,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// Página principal del blog
-export default async function BlogPostPage({ params }: PageProps) {
+// ✅ Componente principal
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await getBlogPost(params.slug);
 
   if (!post) {
