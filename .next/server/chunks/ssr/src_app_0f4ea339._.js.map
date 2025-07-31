@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 8, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/MARLON/Desktop/Nueva%20carpeta/marlon042.github.io/src/app/opengraph-image.png.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 1817, height: 825 }\n"],"names":[],"mappings":";;;AAAA;;uCACe;IAAE,KAAA,yHAAA,CAAA,UAAG;IAAE,OAAO;IAAM,QAAQ;AAAI","debugId":null}}]
+}

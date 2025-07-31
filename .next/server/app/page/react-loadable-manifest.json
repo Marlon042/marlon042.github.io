@@ -1,0 +1,9 @@
+{
+  "[project]/src/components/Marquee/MarqueeWrapper.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/Marquee/MarqueeWrapper.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_components_Marquee_MarqueeWrapper_tsx_0792d3b9._.js",
+      "static/chunks/src_components_Marquee_MarqueeWrapper_tsx_6035ac3c._.js"
+    ]
+  }
+}
